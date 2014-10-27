@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1414422514 source:c:\users\conor\desktop\240 stuff\assignments\spellchecker\main.cpp
+
+1414428384 source:c:\users\conor\desktop\240 stuff\assignments\spellchecker\trie.cpp
+	"trie.h"
+
+1414424381 c:\users\conor\desktop\240 stuff\assignments\spellchecker\trie.h
+	<vector>
+	<string>
+
