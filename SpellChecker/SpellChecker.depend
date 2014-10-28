@@ -8,3 +8,23 @@
 	<vector>
 	<string>
 
+1414434513 source:c:\users\conor\documents\github\spellchecker\spellchecker\trie.cpp
+	"trie.h"
+
+1414434513 c:\users\conor\documents\github\spellchecker\spellchecker\trie.h
+	<vector>
+	<string>
+
+1391977200 source:c:\users\conor\documents\github\spellchecker\spellchecker\customio.cpp
+	"customio.h"
+
+1391977108 c:\users\conor\documents\github\spellchecker\spellchecker\customio.h
+	<string>
+	<iostream>
+
+1414438202 source:c:\users\conor\documents\github\spellchecker\spellchecker\main.cpp
+	"trie.h"
+	"customio.h"
+	<string>
+	<fstream>
+
