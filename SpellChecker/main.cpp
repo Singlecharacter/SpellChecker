@@ -51,7 +51,7 @@ int main()
 
     while(true)
     {
-        std::string inString = getString("Enter a word to check (-1 to quit): ");
+        std::string inString = toLower(getString("Enter a word to check (-1 to quit): "));
 
         if(inString == "-1")
         {

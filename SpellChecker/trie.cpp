@@ -1,4 +1,5 @@
 #include "trie.h"
+#include <iostream>
 
 //TrieNode methods
 
@@ -65,7 +66,7 @@ void Trie::addWord(std::string newWord)
             for(int j = 0; j < currentNode->children.size(); j++)
             {
                 std::string checkStr = currentNode->children.at(j)->data;
-                std::string charStr = newWord.substr(i,i+1);
+                std::string charStr = newWord.substr(i,1);
                 if(checkStr == charStr)
                 {
                     currentNode = currentNode->children.at(j);
@@ -76,13 +77,13 @@ void Trie::addWord(std::string newWord)
 
             if(!foundLetter)
             {
-                currentNode->children.push_back(new TrieNode(newWord.substr(i,i+1)));
+                currentNode->children.push_back(new TrieNode(newWord.substr(i,1)));
                 currentNode = currentNode->children.at(currentNode->children.size()-1);
             }
         }
         else
         {
-            currentNode->children.push_back(new TrieNode(newWord.substr(i,i+1)));
+            currentNode->children.push_back(new TrieNode(newWord.substr(i,1)));
             currentNode = currentNode->children.at(0);
         }
     }
@@ -102,7 +103,7 @@ bool Trie::checkWord(std::string word)
         for(int j = 0; j < currentNode->children.size(); j++)
         {
             std::string checkStr = currentNode->children.at(j)->data;
-            std::string charStr = word.substr(i,i+1);
+            std::string charStr = word.substr(i,1);
             if(checkStr == charStr)
             {
                 currentNode = currentNode->children.at(j);
@@ -141,7 +142,7 @@ std::vector<std::string> Trie::getSuggestions(std::string word)
         for(int j = 0; j < currentNode->children.size(); j++)
         {
             std::string checkStr = currentNode->children.at(j)->data;
-            std::string charStr = word.substr(i,i+1);
+            std::string charStr = word.substr(i,1);
             if(checkStr == charStr)
             {
                 currentNode = currentNode->children.at(j);
@@ -154,8 +155,18 @@ std::vector<std::string> Trie::getSuggestions(std::string word)
         {
             for(int j = 0; j < currentNode->children.size(); j++)
             {
-                suggestions.push_back(word.substr(0,i)+currentNode->children.at(j)->data);
+                if(currentNode->children.at(j)->endOfWord)
+                {
+                    suggestions.push_back(word.substr(0,i)+currentNode->children.at(j)->data);
+                }
             }
+
+            if(suggestions.size() == 0)
+            {
+                suggestions.push_back("No suggestions");
+            }
+
+            return suggestions;
         }
     }
 

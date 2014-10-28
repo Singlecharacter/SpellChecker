@@ -62,6 +62,32 @@ std::string getString(std::string prompt = "")
     return inString;
 }
 
+std::string toLower(std::string str)
+{
+    for(int i = 0; i < str.length(); i++)
+    {
+        if(str[i] <= 90 && str[i] >= 65)
+        {
+            str[i] += 32;
+        }
+    }
+
+    return str;
+}
+
+std::string toUpper(std::string str)
+{
+    for(int i = 0; i < str.length(); i++)
+    {
+        if(str[i] <= 122 && str[i] >= 97)
+        {
+            str[i] -= 32;
+        }
+    }
+
+    return str;
+}
+
 bool getBool(std::string prompt = "")
 {
     bool myBool;
