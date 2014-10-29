@@ -66,10 +66,19 @@ int main()
         {
             std::cout << "That's not a word!\nHere are some suggestions:" << std::endl;
 
-            std::vector<std::string> suggestions = dictionary.getSuggestions(inString);
-            for(int i = 0; i < suggestions.size(); i++)
+            if(inString == "ioan")
             {
-                std::cout << suggestions.at(i) << std::endl;
+                std::cout << "Russian" << std::endl;
+                std::cout << "loser" << std::endl;
+                std::cout << "failure" << std::endl;
+            }
+            else
+            {
+                std::vector<std::string> suggestions = dictionary.getSuggestions(inString);
+                for(int i = 0; i < suggestions.size(); i++)
+                {
+                    std::cout << suggestions.at(i) << std::endl;
+                }
             }
         }
     }
